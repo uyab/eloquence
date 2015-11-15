@@ -156,8 +156,8 @@ class Builder extends EloquentBuilder
         $this->query->where('relevance', '>=', new Expression($threshold));
 
         $this->query->orders = array_merge(
-            [['column' => 'relevance', 'direction' => 'desc']],
-            (array) $this->query->orders
+            (array) $this->query->orders,
+            [['column' => 'relevance', 'direction' => 'desc']]
         );
     }
 
